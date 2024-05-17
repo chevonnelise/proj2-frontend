@@ -1,0 +1,109 @@
+/* General styles for the shop */
+.shop {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f8f9fa;
+  }
+  
+  /* Styles for the products section */
+  .products {
+    width: 100%;
+  }
+  
+  /* Styles for the card container */
+  .card-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+  }
+  
+  /* Styles for individual product cards */
+  .card {
+    border: 1px solid #dee2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    background-color: #ffffff;
+    margin: 10px;
+    flex: 1 1 calc(20% - 20px); /* Five cards per row with some gap */
+    box-sizing: border-box;
+  }
+  
+  .card:hover {
+    transform: scale(1.05);
+  }
+  
+  .card-img {
+    border-radius: 10px 10px 0 0;
+    width: 100%;
+    height: auto;
+  }
+  
+  .card-body {
+    padding: 20px;
+    text-align: center;
+  }
+  
+  .card-title {
+    font-size: 1.25rem;
+    margin-bottom: 10px;
+  }
+  
+  .card-text {
+    margin-bottom: 10px;
+  }
+  
+  .card-tags .badge {
+    display: inline-block;
+    margin-right: 5px;
+    margin: 2px;
+    background-color: #28a745;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 5px;
+  }
+  
+  .btn {
+    display: block;
+    width: 100%;
+    margin-top: 10px;
+    padding: 10px;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-transform: uppercase;
+    transition: background-color 0.2s, color 0.2s;
+  }
+  
+  .btn-outline-dark {
+    color: #343a40;
+    border: 1px solid #343a40;
+    background-color: transparent;
+  }
+  
+  .btn-outline-dark:hover {
+    background-color: #343a40;
+    color: #ffffff;
+  }
+  
+  /* Media query for smaller screens to stack cards in columns */
+  @media (max-width: 992px) {
+    .card {
+      flex: 1 1 calc(33.33% - 20px); /* Three cards per row */
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .card {
+      flex: 1 1 calc(50% - 20px); /* Two cards per row */
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .card {
+      flex: 1 1 calc(100% - 20px); /* One card per row */
+    }
+  }
+  

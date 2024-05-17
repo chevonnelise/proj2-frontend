@@ -2,14 +2,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 100vh;
-    background-color: #f2f2f2;
-    margin: 0;
-}
+    min-height: 100vh;
+    background-image: url('../../assets/login-banner.png');
+    background-size: cover;
+    background-position: center;
+  }
 
 .auth-container {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     justify-content: center;
     align-items: center;
     padding: 20px;
