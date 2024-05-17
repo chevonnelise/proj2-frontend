@@ -1,9 +1,12 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { useGetProducts } from '../../hooks/useGetProducts';
 import './styles.css';
+import { ShopContext } from '../../context/shop-context';
+
 
 export const ShopPage = () => {
   const { products } = useGetProducts();
+  const {addToCart, getCartItemCount} = useContext(ShopContext);
 
   return (
     <div className="shop">
@@ -23,7 +26,9 @@ export const ShopPage = () => {
                     </span>
                   ))}
                 </div>
-                <button className="btn btn-outline-dark">Add to Cart</button>
+                <button className="btn btn-outline-dark" onClick={()=>addToCart(product.id)}>
+                  Add to Cart {getCartItemCount(product.id) > 0 && <>({getCartItemCount(product.id)})</>}
+                  </button>
               </div>
             </div>
           ))}
