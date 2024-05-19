@@ -1,17 +1,21 @@
-import { createContext, useState } from "react";
+import { createContext, useEffect, useState } from "react";
 import { useGetProducts } from "../hooks/useGetProducts";
 import axios from "axios";
 import { useGetToken } from "../hooks/useGetToken";
 import { useNavigate } from "react-router-dom";
+import { useCookies } from "react-cookie";
 
 export const ShopContext = createContext();
 
 export const ShopContextProvider = (props) => {
+    const [cookies, setCookies] = useCookies(["access_token"]);
     const { products } = useGetProducts();
     const {headers} = useGetToken();
     const navigate = useNavigate();
-    const [cartItems, setCartItems] = useState(0);
+    const [cartItems, setCartItems] = useState({});
     const [productId, setProductId] = useState("");
+    const [purchasedItems, setPurchasedItems] = useState([]);
+    const [isAuthenticated, setIsAuthenticated] = useState(cookies.access_token !== null);
 
     const handleProductClick = (productId) => {
         setProductId(productId);
@@ -19,6 +23,16 @@ export const ShopContextProvider = (props) => {
 
     const getCartItemCount = (productId) => {
         return cartItems[productId] || 0;
+    }
+
+    const fetchPurchasedItems = async () => {
+        try {
+            const response = await axios.get(`https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us110.gitpod.io/api/cart/${localStorage.getItem("userId")}`, {headers});
+            setPurchasedItems(response.data.cartItems);
+            console.log (response.data.cartItems);
+        } catch (err) {
+            alert("Error: Something went wrong.")
+        }
     }
 
     const addToCart = (productId) => {
@@ -65,6 +79,19 @@ export const ShopContextProvider = (props) => {
         }
     }
 
+    useEffect(() => {
+        if (isAuthenticated) {
+        fetchPurchasedItems();
+        }
+    }, [isAuthenticated]);
+
+    useEffect(() => {
+        if (!isAuthenticated) {
+            localStorage.clear()
+            setCookies("access_token", null)
+        }
+    }, [isAuthenticated]);
+
     const contextValue = {
         addToCart,
         removeFromCart,
@@ -74,7 +101,10 @@ export const ShopContextProvider = (props) => {
         products,
         productId,
         getTotalCartAmount,
-        checkout
+        checkout,
+        purchasedItems,
+        isAuthenticated,
+        setIsAuthenticated
     }
 
     return (

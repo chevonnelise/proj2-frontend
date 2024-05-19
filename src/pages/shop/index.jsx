@@ -2,11 +2,16 @@ import React, { useContext } from 'react';
 import { useGetProducts } from '../../hooks/useGetProducts';
 import './styles.css';
 import { ShopContext } from '../../context/shop-context';
+import { Navigate } from 'react-router-dom';
 
 
 export const ShopPage = () => {
   const { products } = useGetProducts();
-  const {addToCart, getCartItemCount} = useContext(ShopContext);
+  const {addToCart, getCartItemCount, isAuthenticated} = useContext(ShopContext);
+
+  if (!isAuthenticated) {
+    return <Navigate to="/auth" />
+  }
 
   return (
     <div className="shop">

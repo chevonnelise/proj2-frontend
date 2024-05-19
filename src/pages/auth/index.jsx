@@ -1,8 +1,9 @@
-import React, { useState } from 'react';
+import React, { useContext, useState } from 'react';
 import axios from 'axios';
 import {useCookies} from 'react-cookie';
 import { Link, useNavigate } from 'react-router-dom';
 import './styles.css';
+import { ShopContext } from '../../context/shop-context';
 
 export const AuthPage = () => {
   return (
@@ -76,6 +77,8 @@ const Login = () => {
 
     const navigate = useNavigate();
 
+    const {setIsAuthenticated} = useContext(ShopContext);
+
     const handleSubmit = async (e) => {
         e.preventDefault()
         try{
@@ -88,6 +91,7 @@ const Login = () => {
             setCookies("access_token", result.data.accessToken);
             setCookies("refresh_token", result.data.refreshToken);
             localStorage.setItem("userId", result.data.user.id);
+            setIsAuthenticated(true);
             navigate("/"); // Navigate to home page or any other page
         } else {
             throw new Error("Invalid response from server");
