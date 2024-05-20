@@ -6,9 +6,9 @@ import { Navigate } from 'react-router-dom';
 
 
 export const ShopPage = () => {
-  const { products } = useGetProducts();
   const {addToCart, getCartItemCount, isAuthenticated} = useContext(ShopContext);
-
+  const { products } = useGetProducts(isAuthenticated);
+  
   if (!isAuthenticated) {
     return <Navigate to="/auth" />
   }

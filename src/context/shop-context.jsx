@@ -9,13 +9,13 @@ export const ShopContext = createContext();
 
 export const ShopContextProvider = (props) => {
     const [cookies, setCookies] = useCookies(["access_token"]);
-    const { products } = useGetProducts();
     const {headers} = useGetToken();
     const navigate = useNavigate();
     const [cartItems, setCartItems] = useState({});
     const [productId, setProductId] = useState("");
     const [purchasedItems, setPurchasedItems] = useState([]);
     const [isAuthenticated, setIsAuthenticated] = useState(cookies.access_token !== null);
+    const { products } = useGetProducts(isAuthenticated);
 
     const handleProductClick = (productId) => {
         setProductId(productId);
@@ -27,7 +27,7 @@ export const ShopContextProvider = (props) => {
 
     const fetchPurchasedItems = async () => {
         try {
-            const response = await axios.get(`https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us110.gitpod.io/api/cart/${localStorage.getItem("userId")}`, {headers});
+            const response = await axios.get(`https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/cart/${localStorage.getItem("userId")}`, {headers});
             setPurchasedItems(response.data.cartItems);
             console.log (response.data.cartItems);
         } catch (err) {
@@ -60,8 +60,9 @@ export const ShopContextProvider = (props) => {
         let totalAmount = 0;
         for (const item in cartItems) {
             if (cartItems[item] > 0) {
-                const itemInfo = products.find((product) => product.id === item);
-                // unable to retrieve itemInfo
+                const itemInfo = products.find((product) => {
+                    return product.id === parseInt(item)
+                });
                 if (itemInfo) {
                     totalAmount += cartItems[item] * itemInfo.cost;
                 }
@@ -72,25 +73,28 @@ export const ShopContextProvider = (props) => {
     
     const checkout = async () => {
         try {
-            await axios.post("https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us110.gitpod.io/checkout", {headers});
-            navigate("/");
+            const result = await axios.post("https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/checkout", {headers, cartItems});
+            console.log(result)
+            if(result.status === 200) {
+                window.location.href = result.data.url;
+                
+            }
         } catch (err) {
             console.log(err)
         }
     }
 
     useEffect(() => {
+        console.log(isAuthenticated);
         if (isAuthenticated) {
         fetchPurchasedItems();
-        }
-    }, [isAuthenticated]);
-
-    useEffect(() => {
-        if (!isAuthenticated) {
+        } else {
             localStorage.clear()
             setCookies("access_token", null)
         }
     }, [isAuthenticated]);
+
+
 
     const contextValue = {
         addToCart,
