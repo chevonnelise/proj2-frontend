@@ -82,7 +82,7 @@ const Login = () => {
     const handleSubmit = async (e) => {
         e.preventDefault()
         try{
-        const result = await axios.post("https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/users/login", {
+        const result = await axios.post("superfoods-react.netlify.app/api/users/login", {
             username,
             email,
             password
