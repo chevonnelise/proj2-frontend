@@ -11,7 +11,7 @@ export const Register = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      await axios.post("https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us110.gitpod.io/api/users/register", {
+      await axios.post("https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/users/register", {
         username,
         email,
         password

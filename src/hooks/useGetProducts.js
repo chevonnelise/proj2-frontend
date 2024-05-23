@@ -19,7 +19,7 @@ export const useGetProducts = (isAuthenticated) => {
     }
 
     useEffect(() => {
-        // if (isAuthenticated)
+        if (isAuthenticated)
         fetchProducts();
     },[]);
 

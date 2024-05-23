@@ -7,6 +7,8 @@ import { CheckoutPage } from './pages/checkout';
 import { ShopPage } from './pages/shop';
 import { PurchasedItemsPage } from './pages/purchased-items';
 import { ShopContextProvider } from './context/shop-context';
+import { Footer } from './pages/footer/footer';
+import { Order } from './pages/checkout/order';
 
 function App() {
   return (
@@ -20,7 +22,9 @@ function App() {
             <Route path='/register' element={<Register />} />
             <Route path="/checkout" element={<CheckoutPage />} />
             <Route path="/purchased-items" element={<PurchasedItemsPage />} />
+            <Route path="/order" element={<Order/>} />
           </Routes>
+          <Footer />
         </ShopContextProvider>
       </Router>
     </div>

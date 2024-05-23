@@ -12,6 +12,7 @@ export const ShopContextProvider = (props) => {
     const {headers} = useGetToken();
     const navigate = useNavigate();
     const [cartItems, setCartItems] = useState({});
+    const [orderItems, setOrderItems] = useState({});
     const [productId, setProductId] = useState("");
     const [purchasedItems, setPurchasedItems] = useState([]);
     const [isAuthenticated, setIsAuthenticated] = useState(cookies.access_token !== null);
@@ -22,6 +23,7 @@ export const ShopContextProvider = (props) => {
     }
 
     const getCartItemCount = (productId) => {
+        // console.log(cartItems[productId] || 0)
         return cartItems[productId] || 0;
     }
 
@@ -30,6 +32,15 @@ export const ShopContextProvider = (props) => {
             const response = await axios.get(`https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/cart/${localStorage.getItem("userId")}`, {headers});
             setPurchasedItems(response.data.cartItems);
             console.log (response.data.cartItems);
+        } catch (err) {
+            alert("Error: Something went wrong.")
+        }
+    }
+
+    const fetchOrderItems = async () => {
+        try {
+            const response = await axios.get(`https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/order/${localStorage.getItem("userId")}`, {headers});
+            setOrderItems(response.data.orderItems);
         } catch (err) {
             alert("Error: Something went wrong.")
         }
@@ -108,7 +119,8 @@ export const ShopContextProvider = (props) => {
         checkout,
         purchasedItems,
         isAuthenticated,
-        setIsAuthenticated
+        setIsAuthenticated,
+        fetchOrderItems
     }
 
     return (

@@ -3,7 +3,6 @@ import { Link } from 'react-router-dom';
 import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
 import {faShoppingCart} from '@fortawesome/free-solid-svg-icons';
 import logo from '../assets/logo.png';
-import {useCookies} from 'react-cookie';
 import { ShopContext } from '../context/shop-context';
 
 export const Navbar = () => {
