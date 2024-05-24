@@ -9,7 +9,7 @@ body {
 }
 
 .logo {
-  width: 120px; 
+  width: 120px;
   height: auto;
   display: flex;
   align-items: center;
@@ -43,3 +43,15 @@ body {
   margin-right: 20px;
 }
 
+.navbar-login-btn {
+  color: rgb(45, 66, 32);
+  border: 1px transparent;
+  background-color: rgba(255, 255, 255, 0.701);
+  cursor: pointer;
+  text-align: center;
+  font-size: 700;
+  font-weight: 700;
+  text-transform: uppercase; 
+  padding: 12px 12px 10px 30px;
+  border-radius: 15px;
+}

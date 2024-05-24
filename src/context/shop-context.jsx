@@ -10,7 +10,7 @@ export const ShopContext = createContext();
 export const ShopContextProvider = (props) => {
     const [cookies, setCookies] = useCookies(["access_token"]);
     const {headers} = useGetToken();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
     const [cartItems, setCartItems] = useState({});
     const [orderItems, setOrderItems] = useState({});
     const [productId, setProductId] = useState("");
@@ -30,8 +30,8 @@ export const ShopContextProvider = (props) => {
     const fetchPurchasedItems = async () => {
         try {
             const response = await axios.get(`https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/cart/${localStorage.getItem("userId")}`, {headers});
-            setPurchasedItems(response.data.cartItems);
-            console.log (response.data.cartItems);
+            setPurchasedItems(response.data.orderItems);
+            console.log (response.data.orderItems);
         } catch (err) {
             alert("Error: Something went wrong.")
         }
@@ -84,7 +84,7 @@ export const ShopContextProvider = (props) => {
     
     const checkout = async () => {
         try {
-            const result = await axios.post("https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/checkout", {headers, cartItems});
+            const result = await axios.post("https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/checkout", {headers, cartItems, user_id:`${localStorage.getItem("userId")}`});
             console.log(result)
             if(result.status === 200) {
                 window.location.href = result.data.url;

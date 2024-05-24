@@ -69,7 +69,7 @@ export const AuthPage = () => {
 //     )
 // }
 
-const Login = () => {
+export const Login = () => {
     const [username, setUserName] = useState("");
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");

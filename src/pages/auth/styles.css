@@ -44,6 +44,8 @@ h2 {
     color: rgb(64, 92, 46);
     border-radius: 15px;
     padding: 8px;
+    font-weight:700;
+    cursor: pointer;
 }
 
 .login-btn {
@@ -53,6 +55,8 @@ h2 {
     color: rgb(64, 92, 46);
     border-radius: 15px;
     padding: 8px;
+    font-weight:700;
+    cursor: pointer;
 }
 
 input {
