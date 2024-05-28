@@ -1,7 +1,7 @@
-import { useContext, useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import axios from 'axios';
 import { useGetToken } from "./useGetToken";
-import { ShopContext } from "../context/shop-context";
+// import { ShopContext } from "../context/shop-context";
 
 export const useGetProducts = (isAuthenticated) => {
     const [products, setProducts] = useState([]);

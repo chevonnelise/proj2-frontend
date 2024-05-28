@@ -113,7 +113,6 @@ export const ShopContextProvider = (props) => {
         updateCartItemCount,
         getCartItemCount,
         handleProductClick,
-        products,
         productId,
         getTotalCartAmount,
         checkout,

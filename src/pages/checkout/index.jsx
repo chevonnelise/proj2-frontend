@@ -5,8 +5,8 @@ import { CartItem } from './cart-item';
 import { useNavigate } from 'react-router-dom';
 
 export const CheckoutPage = () => {
-  const { getCartItemCount, getTotalCartAmount, checkout, products } = useContext(ShopContext);
-  // const { products } = useGetProducts();
+  const { getCartItemCount, getTotalCartAmount, checkout, isAuthenticated} = useContext(ShopContext);
+  const { products } = useGetProducts(isAuthenticated);
   const navigate = useNavigate();
 
   const totalAmount = getTotalCartAmount();
