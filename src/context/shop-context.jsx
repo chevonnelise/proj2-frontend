@@ -29,7 +29,7 @@ export const ShopContextProvider = (props) => {
 
     const fetchPurchasedItems = async () => {
         try {
-            const response = await axios.get(`https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/cart/${localStorage.getItem("userId")}`, {headers});
+            const response = await axios.get(`https://proj2-backend.onrender.com/api/cart/${localStorage.getItem("userId")}`, {headers});
             setPurchasedItems(response.data.orderItems);
             console.log (response.data.orderItems);
         } catch (err) {
@@ -39,7 +39,7 @@ export const ShopContextProvider = (props) => {
 
     const fetchOrderItems = async () => {
         try {
-            const response = await axios.get(`https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/order/${localStorage.getItem("userId")}`, {headers});
+            const response = await axios.get(`https://proj2-backend.onrender.com/api/order/${localStorage.getItem("userId")}`, {headers});
             setOrderItems(response.data.orderItems);
         } catch (err) {
             alert("Error: Something went wrong.")

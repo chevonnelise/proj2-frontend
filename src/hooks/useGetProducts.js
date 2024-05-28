@@ -11,7 +11,7 @@ export const useGetProducts = (isAuthenticated) => {
     // console.log(context);
     const fetchProducts = async () => {
         try{
-        const fetchedProducts = await axios.get("https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/products", {headers});
+        const fetchedProducts = await axios.get("https://proj2-backend.onrender.com/api/products", {headers});
         setProducts(fetchedProducts.data.product);
         } catch (err) {
             alert("Error: Something went wrong.")
