@@ -4,7 +4,7 @@
 
 ## Features
 **How do users navigate this web application**\
-[Live Link](https://superfoods-react.netlify.app/)
+[Live Link](https://superfoods-react.netlify.app/auth)
 
 **Before logging in,**
 1. **Login/Register**
