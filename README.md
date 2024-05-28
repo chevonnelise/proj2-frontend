@@ -1,70 +1,64 @@
-# Getting Started with Create React App
+## About This Project
+**User Problem Statement**
+* This website features an ecommerce Superfoods website for health-conscious consumers to purchase health supplements. Built on MySQL, Express.js, ReactJS, Node.js (MERN) stack by linking ReactJS frontend to MySQL, Express.js and Node.js backend database ([Live Link](https://proj2-backend.onrender.com/)).
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Features
+**How do users navigate this web application**\
+[Live Link](https://superfoods-react.netlify.app/)
 
-## Available Scripts
+**Before logging in,**
+1. **Login/Register**
+- Upon entering the website, users are redirected to the login page. 
+- To continue shopping, user can choose to register by clicking on the register link OR login via the following test user credentials to continue shopping:
+  - Username: test
+  - Email: test@gmail.com
+  - Password: test
 
-In the project directory, you can run:
+2. **Footer Links**
+- Shop: Users are prompted to login if they wish to continue shopping on Superfoods. To continue, they can click on the 'Login' button at the top right of the website.
+- About: Users can find out about the origin story of Superfoods, a brand that aims to sell health supplements that are super boosters for people's health and immunity.
+- Contact: Users can send a message and indicate their contact details for their enquiries to be answered.
 
-### `npm start`
+**After logging in,**\
+1. **Shop**
+- This website features 3 categories of Taylor's songs: Fixed, Surprise and Unplayed.
+    * The Fixed category - classics she usually performs at every concert.
+    * The Surprise songs - these unexpected songs that vary from concert to concert and these are songs Swifties love to guess.
+    * Last but not least, songs that Swifties are still waiting for Taylor to perform fall into the Unplayed category.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+2. **Purchased**
+- In this section, if users are keen on updates, they can submit their email to subscribe for latest updates.
+    
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+## Screenshots of Web Application
+- 'Login' Page:
+<img width="1418" alt="login-page" src="https://github.com/chevonnelise/proj2-frontend/assets/114272460/165ecfc5-ec8a-4cc2-8386-8ec471003d88">
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+- Footer Links:
+<img width="555" alt="Screen Shot 2024-05-28 at 6 09 45 PM" src="https://github.com/chevonnelise/proj2-frontend/assets/114272460/bda9df6d-5703-4ba2-befe-69989b2a7722">
 
-### `npm run build`
+- 'Shop' Page:
+<img width="1414" alt="Screen Shot 2024-05-28 at 6 10 10 PM" src="https://github.com/chevonnelise/proj2-frontend/assets/114272460/af3e8afb-3eb9-46a4-8719-d2f7178a7c18">
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+- Adding item to cart for purchase:
+<img width="1404" alt="Screen Shot 2024-05-28 at 6 16 45 PM" src="https://github.com/chevonnelise/proj2-frontend/assets/114272460/d9510250-919d-48c1-ac47-17e0e9390cda">
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+- Previous Purchases:
+<img width="1385" alt="Screen Shot 2024-05-28 at 6 13 10 PM" src="https://github.com/chevonnelise/proj2-frontend/assets/114272460/0cdac908-59a3-4f68-aa52-4344ac3e787a">
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+- Cart Items:
+<img width="1404" alt="Screen Shot 2024-05-28 at 6 13 21 PM" src="https://github.com/chevonnelise/proj2-frontend/assets/114272460/dc3cfa53-f8e7-4f83-ab88-85cb7e874db2">
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+**Theme**
+* Using a mixture of bright summer colours such as sunny yellow, tropical orange and lime green, embody the healthiness, organic and fresh nature of health supplements sold on the website.
+  
+## Built With
+* MySQL
+* Express.js
+* ReactJS
+* Node.js
+* [Google Fonts](https://fonts.googleapis.com)
+* [FortAwesome Icons](https://fortawesome.com/)
+* [FontAwesomeIcon](https://fontawesome.com/)
+* [Canva Images](https://www.canva.com/)
