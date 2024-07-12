@@ -84,7 +84,7 @@ export const ShopContextProvider = (props) => {
     
     const checkout = async () => {
         try {
-            const result = await axios.post("https://3000-chevonnelis-proj2backen-lqv6rdz4jy0.ws-us114.gitpod.io/api/checkout", {headers, cartItems, user_id:`${localStorage.getItem("userId")}`});
+            const result = await axios.post("https://proj2-backend.onrender.com/api/checkout", {headers, cartItems, user_id:`${localStorage.getItem("userId")}`});
             console.log(result)
             if(result.status === 200) {
                 window.location.href = result.data.url;
