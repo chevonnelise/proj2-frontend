@@ -22,10 +22,9 @@
 
 **After logging in,**\
 1. **Shop**
-- This website features 3 categories of Taylor's songs: Fixed, Surprise and Unplayed.
-    * The Fixed category - classics she usually performs at every concert.
-    * The Surprise songs - these unexpected songs that vary from concert to concert and these are songs Swifties love to guess.
-    * Last but not least, songs that Swifties are still waiting for Taylor to perform fall into the Unplayed category.
+- This website is an online store that displays all the health supplements available for purchase.
+- Shoppers are able to select their preferred quantity and add to cart/remove from cart before carting out.
+- Upon carting out, shoppers are redirected to a payment page where they are able to see if their payment was successful before being redirected back to a page that displays previous purchase.
 
 2. **Purchased**
 - In this section, if users are keen on updates, they can submit their email to subscribe for latest updates.
