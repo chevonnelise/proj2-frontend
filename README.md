@@ -3,7 +3,7 @@
 * This website features an ecommerce Superfoods website for health-conscious consumers to purchase health supplements. Built on MySQL, Express.js, ReactJS, Node.js (MERN) stack by linking ReactJS frontend to MySQL, Express.js and Node.js backend database ([Live Link](https://proj2-backend.onrender.com/)).
 
 ## Features
-**How do users navigate this web application**\
+**How do users navigate this web application**
 [Live Link](https://superfoods-react.netlify.app/auth)\
 [Demo video](https://youtu.be/Epv8fsltjUs?si=28V3pJFrhd7d2q_F)
 
@@ -20,7 +20,7 @@
 - About: Users can find out about the origin story of Superfoods, a brand that aims to sell health supplements that are super boosters for people's health and immunity.
 - Contact: Users can send a message and indicate their contact details for their enquiries to be answered.
 
-**After logging in,**\
+**After logging in,**
 1. **Shop**
 - This website is an online store that displays all the health supplements available for purchase.
 - Shoppers are able to select their preferred quantity and add to cart/remove from cart before carting out.
